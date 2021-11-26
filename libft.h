@@ -6,7 +6,7 @@
 /*   By: mboualam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 13:26:23 by mboualam          #+#    #+#             */
-/*   Updated: 2021/11/24 22:31:38 by mboualam         ###   ########.fr       */
+/*   Updated: 2021/11/26 00:01:36 by mboualam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <stdlib.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h> 

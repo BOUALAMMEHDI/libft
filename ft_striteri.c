@@ -6,7 +6,7 @@
 /*   By: mboualam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 22:24:56 by mboualam          #+#    #+#             */
-/*   Updated: 2021/11/24 22:36:11 by mboualam         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:12:35 by mboualam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		(*f)(i, s + i);

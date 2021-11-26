@@ -39,3 +39,8 @@ int	ft_atoi(const char *s1)
 	}
 	return ((int)result * signe);
 }
+
+int main()
+{
+	printf("%d",ft_atoi("123456ABCD"));
+}

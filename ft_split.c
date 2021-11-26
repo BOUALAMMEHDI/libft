@@ -6,7 +6,7 @@
 /*   By: mboualam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:25:56 by mboualam          #+#    #+#             */
-/*   Updated: 2021/11/22 23:06:55 by mboualam         ###   ########.fr       */
+/*   Updated: 2021/11/25 20:56:29 by mboualam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -45,6 +45,14 @@ static	char	*ft_string_allocate(char const *s, char c)
 	return (ptr);
 }
 
+static char	**my_free(char **s, int i)
+{
+	while (i >= 0)
+		free(s[i--]);
+	free(s);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -63,21 +71,10 @@ char	**ft_split(char const *s, char c)
 		while (s[0] == c)
 			s++;
 		ptr[i] = ft_string_allocate(s, c);
+		if (!ptr[i])
+			return (my_free(ptr, --i));
 		s = s + ft_strlen(ptr[i]);
 	}
 	ptr[i] = 0;
 	return (ptr);
 }
-/*
-int main()
-{
-	char **tt = ft_split("lorem ipsum dolor sit amet",' ');
-
-	int i = 0;
-	while(*(tt + i))
-	{
-		printf("%s \n",*(tt + i));
-		i++;
-	}
-	return 0;
-}*/
